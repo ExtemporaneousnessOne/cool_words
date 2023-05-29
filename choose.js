@@ -9,7 +9,7 @@ const popUp = document.getElementById("popup-content");
 
 const date = new Date().toDateString();
 const datePhrase = "Today is " + date + "!";
-document.getElementById("allContent").innerHTML = datePhrase;
+document.getElementById("allContent").textContent = datePhrase;
 
 const wordPairs = [
     ["ekphrastic", "type of poem that paints a scene", "usually used in writing or art, I think"],
@@ -160,36 +160,36 @@ const currentCmt = wordPairs[n][2];
 
 
 function reset(){
-    wordBtn.innerHTML = "Word Of The Day"
-    defBtn.innerHTML = "Definition Of The Day"
-    cmtBtn.innerHTML = "Comments On The Word"
-    document.getElementById("allContent").innerHTML = datePhrase;
+    wordBtn.textContent = "Word Of The Day"
+    defBtn.textContent = "Definition Of The Day"
+    cmtBtn.textContent = "Comments On The Word"
+    document.getElementById("allContent").textContent = datePhrase;
 }
 
 function toggle(event){
     var clickedId = event.target.id;
-    console.log(event.target.innerHTML);
+    console.log(event.target.textContent);
     
     if(clickedId == "wordBtn"){
-        if (wordBtn.innerHTML == "Word Of The Day"){
-            wordBtn.innerHTML = "Back To Date"
-            document.getElementById("allContent").innerHTML = currentWord;
+        if (wordBtn.textContent == "Word Of The Day"){
+            wordBtn.textContent = "Back To Date"
+            document.getElementById("allContent").textContent = currentWord;
         }
         else{
             reset();
         }
     }else if (clickedId == "defBtn"){
-        if (defBtn.innerHTML == "Definition Of The Day"){
-            defBtn.innerHTML = "Back To Date"
-            document.getElementById("allContent").innerHTML = currentDef;
+        if (defBtn.textContent == "Definition Of The Day"){
+            defBtn.textContent = "Back To Date"
+            document.getElementById("allContent").textContent = currentDef;
         }
         else{
             reset();
         }
     }else if (clickedId == "cmtBtn"){
-        if (cmtBtn.innerHTML == "Comments On The Word"){
-            cmtBtn.innerHTML = "Back To Date"
-            document.getElementById("allContent").innerHTML = currentCmt;
+        if (cmtBtn.textContent == "Comments On The Word"){
+            cmtBtn.textContent = "Back To Date"
+            document.getElementById("allContent").textContent = currentCmt;
         }
         else{
             reset();
